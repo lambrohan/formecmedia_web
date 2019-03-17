@@ -1,0 +1,63 @@
+$dot-diameter:10.27px;
+$color-primary:#00ffff;
+
+h4{
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.31em;
+}
+
+.d-m{
+  position: absolute;
+  top:35%;
+  left:25%;
+  width: 300px;
+  height: 50px;
+
+  .left{
+    width: 0%;  //will be 80% later
+    height: 100%;
+    position: absolute;
+    right:20%;
+    bottom: 0;
+    border-top:1px solid cyan;
+    
+  }
+  .right{
+    width: 0%; //will be 20% later
+    right: 0;
+    bottom:0;
+    height:0; // will be 100% later
+    position: absolute;
+    border-bottom:1px solid cyan;
+    border-left:1px solid cyan;
+
+  }
+  h4{
+    position: absolute;
+    top:-60%;
+    margin-left: 2px;
+    opacity: 0;
+    cursor: pointer;
+    
+  }
+}
+
+.d-m .dot{
+  width: $dot-diameter;
+  height: $dot-diameter;
+  border-radius: 50%;
+  background: $color-primary;
+  position: absolute;
+  bottom: - $dot-diameter/2;
+  right:- $dot-diameter/2;
+  transform: scale(0);
+  transition: all 200ms ease-in;
+}
