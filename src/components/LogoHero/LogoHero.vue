@@ -1,19 +1,44 @@
 <template>
   <div id="logo-hero">
+    <p class="log" style="color:#00ffff; position:fixed; top:1%; left:1%;font-size:20px">{{scrollPosition}}</p>
    <div id="canvas"></div>
-   <div class="d-m">
-     <h4>Digital Marketing</h4>
+   <!-- DIGITAL MKTING -->
+    <div class="d-m">
+      <h4>Digital Marketing</h4>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- APP DEVELOPMENT -->
+    <div class="app-dev">
+     <h4>App Development</h4>
      <div class="left"></div>
      <div class="right"></div>
      <div class="dot"></div>
-   </div>
+    </div>
+    <!-- WEB DESIGN -->
+    <div class="web-dev">
+     <h4>Web Design &amp; Development</h4>
+     <div class="left"></div>
+     <div class="right"></div>
+     <div class="dot"></div>
+    </div>
+     <!-- VIDEOGRAPHY -->
+    <div class="videography">
+     <h4>VIDEOGRAPHY</h4>
+     <div class="left"></div>
+     <div class="right"></div>
+     <div class="dot"></div>
+    </div>
+
+
   </div>
   
 </template>
 <script>
 import * as THREE from 'three';
-import OBJLoader from '../three/OBJLoader';
-import anime from 'animejs';
+import OBJLoader from '@/three/OBJLoader';
+import playAnim from './anim'
 export default {
   name:'LogoHero',
   data(){
@@ -28,58 +53,25 @@ export default {
       mouseX:null,
       mouseY:null,
       movingLight:null,
+      scrollPosition:window.screenY,
+      animated:false
     }
   },
   mounted(){
     this.initThreeJs();
     this.renderThreeJs();
-    this.initAnimeJS();
+    window.addEventListener('scroll',(e)=>{
+      this.scrollPosition = window.scrollY;
+      if(this.scrollPosition >700 && this.scrollPosition <800 && !this.animated){
+        playAnim();
+        this.animated = true;
+      }
+    })
     
     
   },
   methods:{
 
-    initAnimeJS:function(){
-      var dmTimeline = anime.timeline({
-        autoplay:true,
-        easing:'linear',
-      });
-
-      dmTimeline.add({
-        targets:'.d-m .dot',
-        scale:1,
-        duration:200
-      },'+=200').add({
-        targets:'.d-m .right',
-        width:'20%',
-        duration:200
-      }).add({
-        targets:'.d-m .right',
-        height:'100%',
-        duration:200,
-      }).add({
-        targets:'.d-m .left',
-        width:'80%',
-        duration:600,
-        easing:'easeOutExpo'
-
-      }).add({
-        targets:'.d-m h4',
-        opacity:1,
-        duration:10
-      },).add({
-        targets:'.d-m h4',
-        opacity:0,
-        duration:100
-      },).add({
-        targets:'.d-m h4',
-        opacity:1,
-        duration:10
-      },)
-
-
-
-    },
 
     //three js code
     initThreeJs:function (){
@@ -147,13 +139,18 @@ export default {
       this.camera.lookAt(this.scene.position);
       this.renderer.render( this.scene, this.camera);
     }
+  },
+  destroyed(){
+    window.removeEventListener('mousemove');
+    window.removeEventListener('resize');
+
   }
 
 }
 </script>
 
 <style lang="scss">
-@import '../styles/components/LogoHero';
+@import '../../styles/components/LogoHero';
 
 #logo-hero{
   background-color: #000;

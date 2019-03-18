@@ -8,7 +8,7 @@
 
 <script>
 import HomeIntro from '@/components/HomeIntro.vue';
-import LogoHero from '@/components/LogoHero.vue';
+import LogoHero from '@/components/LogoHero/LogoHero.vue';
 export default {
  name:"Home",
  components:{

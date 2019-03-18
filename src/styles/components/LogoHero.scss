@@ -2,7 +2,7 @@ $dot-diameter:10.27px;
 $color-primary:#00ffff;
 
 h4{
-  margin: 0;
+  margin: 0 0 0 8px;
   padding: 0;
   font-family: Poppins;
   font-style: normal;
@@ -12,26 +12,28 @@ h4{
   color: #00ffff;
   text-transform: uppercase;
   letter-spacing: 0.31em;
+  z-index: 10;
 }
 
+// =================== DIGITAL MARKETING =======================//
 .d-m{
   position: absolute;
   top:35%;
-  left:25%;
+  left:20%;
   width: 300px;
-  height: 50px;
+  height: 70px;
 
   .left{
-    width: 0%;  //will be 80% later
+    width: 0%;  //will be 90% later
     height: 100%;
     position: absolute;
-    right:20%;
+    right:10%;
     bottom: 0;
     border-top:1px solid cyan;
     
   }
   .right{
-    width: 0%; //will be 20% later
+    width: 0%; //will be 10% later
     right: 0;
     bottom:0;
     height:0; // will be 100% later
@@ -42,8 +44,7 @@ h4{
   }
   h4{
     position: absolute;
-    top:-60%;
-    margin-left: 2px;
+    top:-45%;
     opacity: 0;
     cursor: pointer;
     
@@ -58,6 +59,161 @@ h4{
   position: absolute;
   bottom: - $dot-diameter/2;
   right:- $dot-diameter/2;
+  transform: scale(0);
+  transition: all 200ms ease-in;
+}
+
+// ===================APP DEVELOPMENT =============================//
+.app-dev{
+  position: absolute;
+  bottom:35%;
+  left:25%;
+  width: 300px;
+  height: 50px;
+
+  .left{
+    width: 0%;  //will be 85% later
+    height: 100%;
+    position: absolute;
+    right:10%;
+    bottom: 0;
+    border-top:1px solid cyan;
+    
+  }
+  .right{
+    width: 0%; //will be 15% later
+    right: 0;
+    bottom:0;
+    height:0; // will be 100% later
+    position: absolute;
+    border-bottom:1px solid cyan;
+    border-left:1px solid cyan;
+
+  }
+  h4{
+    position: absolute;
+    top:-60%;
+    opacity: 0;
+    cursor: pointer;
+    
+  }
+}
+
+.app-dev .dot{
+  width: $dot-diameter;
+  height: $dot-diameter;
+  border-radius: 50%;
+  opacity: 0;
+  background: $color-primary;
+  position: absolute;
+  bottom: - $dot-diameter/2;
+  right:- $dot-diameter/2;
+  transform: scale(0);
+  transition: all 200ms ease-in;
+}
+
+// ==================== WEB DESIGN & DEV =======================//
+
+.web-dev{
+  position: absolute;
+  top:35%;
+  right:20%;
+  width: 320px;
+  height: 70px;
+
+  .left{
+    width: 0%;  //will be 15% later
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-top:1px solid cyan;
+    
+  }
+  .right{
+    width: 0%; //will be 85% later
+    left: 15%;
+    top:0;
+    opacity: 0;
+    height:0; // will be 100% later
+    position: absolute;
+    border-bottom:1px solid cyan;
+    border-left:1px solid cyan;
+
+  }
+  h4{
+    position: absolute;
+    bottom:10%;
+    margin-left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+    
+  }
+}
+
+.web-dev .dot{
+  width: $dot-diameter;
+  height: $dot-diameter;
+  border-radius: 50%;
+  opacity: 0;
+  background: $color-primary;
+  position: absolute;
+  top:  -$dot-diameter/2;
+  left: -$dot-diameter/2;
+  transform: scale(0);
+  transition: all 200ms ease-in;
+}
+
+// ==================== WEB DESIGN & DEV =======================//
+
+.videography{
+  position: absolute;
+  top:60%;
+  right:24%;
+  width: 280px;
+  height: 30px;
+
+  .left{
+    width: 0%;  //will be 8% later
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-top:1px solid cyan;
+    
+  }
+  .right{
+    width: 0%; //will be 92% later
+    left: 8%;
+    top:0;
+    opacity: 0;
+    height:0; // will be 100% later
+    position: absolute;
+    border-bottom:1px solid cyan;
+    border-left:1px solid cyan;
+
+  }
+  h4{
+    position: absolute;
+    bottom:0.7rem;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    
+  }
+}
+
+.videography .dot{
+  width: $dot-diameter;
+  height: $dot-diameter;
+  border-radius: 50%;
+  opacity: 0;
+  background: $color-primary;
+  position: absolute;
+  top:  -$dot-diameter/2;
+  left: -$dot-diameter/2;
   transform: scale(0);
   transition: all 200ms ease-in;
 }
