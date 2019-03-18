@@ -8,7 +8,6 @@ function playAnimations (){
     easing:'linear',
     update:function(anim){
       var progress = Math.round(anim.progress);
-      console.log(progress)
       if(progress > 31){
         appDevTimeline.play();
       }else if(progress > 11){

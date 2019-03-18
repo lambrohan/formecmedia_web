@@ -1,6 +1,6 @@
 <template>
   <div id="logo-hero">
-    <p class="log" style="color:#00ffff; position:fixed; top:1%; left:1%;font-size:20px">{{scrollPosition}}</p>
+    <p class="log" style="color:#00ffff; position:fixed; top:1%; left:1%;font-size:20px">{{Math.round(scrollPosition)}}</p>
    <div id="canvas"></div>
    <!-- DIGITAL MKTING -->
     <div class="d-m">
@@ -60,7 +60,7 @@ export default {
   mounted(){
     this.initThreeJs();
     this.renderThreeJs();
-    window.addEventListener('scroll',(e)=>{
+    window.addEventListener('scroll',()=>{
       this.scrollPosition = window.scrollY;
       if(this.scrollPosition >700 && this.scrollPosition <800 && !this.animated){
         playAnim();
@@ -149,7 +149,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scopped>
 @import '../../styles/components/LogoHero';
 
 #logo-hero{
