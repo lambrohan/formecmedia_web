@@ -1,6 +1,6 @@
 <template>
   <div id="logo-hero">
-    <p class="log" style="color:#00ffff; position:fixed; top:1%; left:1%;font-size:20px">{{Math.round(scrollPosition)}}</p>
+    <p class="log" style="color:#00ffff; position:fixed; top:1%; left:1%;font-size:20px; z-index:10000">{{Math.round(scrollPosition)}}</p>
    <div id="canvas"></div>
    <!-- DIGITAL MKTING -->
     <div class="d-m">
@@ -38,7 +38,7 @@
 <script>
 import * as THREE from 'three';
 import OBJLoader from '@/three/OBJLoader';
-import playAnim from './anim'
+import playAnim from './anim';
 export default {
   name:'LogoHero',
   data(){
@@ -53,23 +53,30 @@ export default {
       mouseX:null,
       mouseY:null,
       movingLight:null,
-      scrollPosition:window.screenY,
-      animated:false
+      animated:false,
+      scrollPosition:0
     }
   },
   mounted(){
     this.initThreeJs();
     this.renderThreeJs();
-    window.addEventListener('scroll',()=>{
-      this.scrollPosition = window.scrollY;
-      if(this.scrollPosition >700 && this.scrollPosition <800 && !this.animated){
+
+    this.$store.watch((state)=>{
+      return this.$store.state.scrollPosition
+    },
+    (newVal)=>{
+      this.scrollPosition = newVal;
+       if(this.scrollPosition >700 && this.scrollPosition <800 && !this.animated){
+        //update in store
         playAnim();
         this.animated = true;
+        
       }
     })
     
     
   },
+
   methods:{
 
 
@@ -141,8 +148,7 @@ export default {
     }
   },
   destroyed(){
-    window.removeEventListener('mousemove');
-    window.removeEventListener('resize');
+  
 
   }
 

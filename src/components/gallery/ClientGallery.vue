@@ -8,7 +8,6 @@
         <p>{{client.name}}</p>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -31,51 +30,54 @@ export default {
 #container{
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 105vh;
   background-image: url('../../assets/bg-client-showcase.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   box-sizing: border-box;
+  z-index: 0;
+   @include for-tablet-landscape-up{
+     padding-top: 10px;
+    }
+  
+  
 
   .overlay{
+    position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.856);
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.756);
+    z-index: -1;
   }
 
   .header{
-    position: absolute;
-    left:50%;
-    margin: 16px 0 0 0  ;
+    width: 100%;
     text-align: center;
     font-weight: 900;
-    font-size: 72px;
     letter-spacing: 0.75em;
     text-indent: 0.75em;
-    transform: translateX(-50%);
     background: linear-gradient(to bottom, #a5a5a5 44.17%, #fff 71.87%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    z-index: 2;
+    z-index: 1;
+    @include for-tablet-landscape-up{
+       font-size: 72px;
+    }
   }
 
   .gallery{
     width:100%;
-    top: 22%;
-    position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     z-index: 2;
     align-items: center;
     justify-content: center;
-    padding: 0 161px 0 161px;
+    @include for-tablet-landscape-up{
+      padding: 0 161px 0 161px;
+    }
     
   }
 

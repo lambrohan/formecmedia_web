@@ -23,9 +23,13 @@ export default new Vuex.Store({
       {name:"Grace Plasto",icon:"",link:""}
       
 
-    ]
+    ],
+    scrollPosition:0
   },
   mutations: {
+    updateScrollPosition:(state,position) => {
+      state.scrollPosition = position;
+    }
 
   },
   actions: {
@@ -34,6 +38,9 @@ export default new Vuex.Store({
   getters:{
     getClientList: state => {
       return state.clients;
+    },
+    getScrollPosition: state => {
+      return state.scrollPosition;
     }
   }
 })
