@@ -147,10 +147,7 @@ export default {
       this.renderer.render( this.scene, this.camera);
     }
   },
-  destroyed(){
-  
 
-  }
 
 }
 </script>

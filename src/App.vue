@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <MenuView/>
     <router-view/>
   </div>
 </template>
 
 <script>
+import MenuView from '@/components/Menu.vue'
 export default {
   name:"MyApp",
+  components:{
+    MenuView
+  },
   data(){
     return{
       scrollPosition:0
@@ -45,5 +50,11 @@ body{
   ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.8);
   
+  }
+
+
+  #app{
+    position: relative;
+    width:100%;
   }
 </style>

@@ -33,11 +33,25 @@ export default {
   data(){
     return{
       date:new Date().getFullYear(),
-      scrollPosition:store.state.scrollPosition,
+      scrollPosition:this.$store.state.scrollPosition,
+      animated:false,
     }
   },
   mounted(){
-    this.initGetQuoteAnimation();
+   //setting up watcher for scroll
+    this.$store.watch((state)=>{
+      return this.$store.state.scrollPosition
+    },
+    (newVal,OldVal)=>{
+      this.scrollPosition = newVal;
+       if(this.scrollPosition >1900 && this.scrollPosition <2000 && !this.animated){
+        //update in store
+        this.initGetQuoteAnimation();
+        this.animated = true;
+        
+      }
+    })
+
 
   },
   methods:{
@@ -47,13 +61,14 @@ export default {
          targets: '#get-quote path',
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: 'easeInOutSine',
+          opacity:1,
           duration: 1500,
-          delay: function(el, i) { return i * 50 },
           direction: 'forwards',
           loop: false,
-          autoplay:true,
+          autoplay:false,
 
       })
+      quoteAnim.restart();
     }
   }
   
@@ -72,16 +87,25 @@ export default {
     top:30%;
     padding:0 16px;
     transform: translate(-50%,-50%);
-    transition: all 1s ease;
+    transition: filter 0.3s ease;
 
     path{
-      transition: fill 1s ease ;
+      transition: fill 0.2s ease ;
+      opacity: 0;
     }
     
   }
 
   #get-quote:hover{
-    cursor: pointer;
+    cursor: pointer;     
+    filter: drop-shadow( 1px 1px 6px rgba(0, 255, 255, 1));
+ 
+    
+    path{
+      fill:aqua;
+      stroke-width: 0;
+      box-shadow: 0 0 10px #00ffff;
+    }
    
     
   }
