@@ -1,8 +1,26 @@
+$animation-time:0.4s;
 
-*{
-  margin: 0;
-  padding: 0;
+.home-button{
+  position: fixed;
+  left:-100px;
+  top:16px;
+  width: 30px;
+  height:30px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-sizing: content-box;
+  background: #96FFFF;
+  transition: left 0.3s 600ms ease;
+  z-index: 99;
+  img{
+    width: 30px;
+    height:30px
+    
+  }
 }
+
+
 
 .navTrigger {
   cursor: pointer;
@@ -10,7 +28,7 @@
   height: 30px;
   position: fixed;
   margin:auto;
-  background: #00ffff;
+  background: #96FFFF;
   padding: 8px;
   box-sizing: content-box;
   right:16px;
@@ -26,28 +44,28 @@
     height: 4px;
   }
   i:nth-child(1) {
-    animation:outT 0.8s backwards;
+    animation:outT $animation-time backwards;
     animation-direction:reverse;
     margin-top: 4px;
   }
   i:nth-child(2) {
     margin: 5px 0;
-    animation:outM 0.8s backwards;
+    animation:outM $animation-time backwards;
     animation-direction:reverse;
   }
   i:nth-child(3) {
-    animation:outBtm 0.8s backwards;
+    animation:outBtm $animation-time backwards;
     animation-direction:reverse;
   }
   &.active {
     i:nth-child(1) {
-      animation:inT 0.8s forwards;
+      animation:inT $animation-time forwards;
     }
     i:nth-child(2) {
-      animation:inM 0.8s forwards;
+      animation:inM $animation-time forwards;
     }
     i:nth-child(3) {
-      animation:inBtm 0.8s forwards;
+      animation:inBtm $animation-time forwards;
     }
   }
 }

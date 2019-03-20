@@ -27,7 +27,6 @@
 </template>
 <script>
 import anime from 'animejs';
-import store from '@/store';
 export default {
   name:"MyFooter",
   data(){
@@ -39,10 +38,10 @@ export default {
   },
   mounted(){
    //setting up watcher for scroll
-    this.$store.watch((state)=>{
+    this.$store.watch(()=>{
       return this.$store.state.scrollPosition
     },
-    (newVal,OldVal)=>{
+    (newVal)=>{
       this.scrollPosition = newVal;
        if(this.scrollPosition >1900 && this.scrollPosition <2000 && !this.animated){
         //update in store
