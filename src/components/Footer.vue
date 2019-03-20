@@ -90,7 +90,7 @@ export default {
     transition: filter 0.3s ease;
 
     path{
-      transition: fill 0.2s ease ;
+      transition: fill 0.3s ease ;
       opacity: 0;
     }
     
@@ -103,7 +103,6 @@ export default {
     
     path{
       fill:aqua;
-      stroke-width: 0;
       box-shadow: 0 0 10px #00ffff;
     }
    
