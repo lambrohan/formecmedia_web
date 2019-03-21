@@ -41,6 +41,7 @@ h4{
     width: 0%; //will be 10% later
     right: 0;
     bottom:0;
+    opacity: 0;
     height:0; // will be 100% later
     position: absolute;
     border-bottom:1px solid cyan;
@@ -66,6 +67,7 @@ h4{
   right:- $dot-diameter/2;
   transform: scale(0);
   transition: all 200ms ease-in;
+  opacity: 0;
 }
 
 // ===================APP DEVELOPMENT =============================//
@@ -77,7 +79,7 @@ h4{
   height: 50px;
 
   .left{
-    width: 0%;  //will be 85% later
+    width: 0;  //will be 85% later
     height: 100%;
     position: absolute;
     right:10%;
@@ -86,10 +88,11 @@ h4{
     
   }
   .right{
-    width: 0%; //will be 15% later
+    width: 0; //will be 15% later
     right: 0;
     bottom:0;
-    height:0; // will be 100% later
+    height:0; 
+    opacity: 0;// will be 100% later
     position: absolute;
     border-bottom:1px solid cyan;
     border-left:1px solid cyan;
@@ -114,8 +117,7 @@ h4{
   bottom: - $dot-diameter/2;
   right:- $dot-diameter/2;
   transform: scale(0);
-  transition: all 200ms ease-in;
-}
+  transition: all 200ms ease-in;}
 
 // ==================== WEB DESIGN & DEV =======================//
 

@@ -19,11 +19,13 @@ function playAnimations (){
   dmTimeline.add({
     targets:'.d-m .dot',
     scale:1,
+    opacity:1,
     duration:200,
   },'+=200').add({
     targets:'.d-m .right',
     width:'10%',
-    duration:200
+    duration:200,
+    opacity:1
   }).add({
     targets:'.d-m .right',
     height:'100%',
@@ -61,6 +63,7 @@ function playAnimations (){
   },'+=200').add({
     targets:'.app-dev .right',
     width:'10%',
+    opacity:1,
     duration:200
   }).add({
     targets:'.app-dev .right',

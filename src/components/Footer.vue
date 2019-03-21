@@ -86,10 +86,10 @@ export default {
     top:30%;
     padding:0 16px;
     transform: translate(-50%,-50%);
-    transition: filter 0.3s ease;
+    transition: filter 0.2s ease;
 
     path{
-      transition: fill 0.3s ease ;
+      transition: fill 0.2s ease;
       opacity: 0;
     }
     
