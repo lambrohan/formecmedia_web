@@ -61,12 +61,12 @@ export default {
     this.initThreeJs();
     this.renderThreeJs();
 
-    this.$store.watch((state)=>{
+    this.$store.watch(()=>{
       return this.$store.state.scrollPosition
     },
     (newVal)=>{
       this.scrollPosition = newVal;
-       if(this.scrollPosition >700 && this.scrollPosition <800 && !this.animated){
+       if(this.scrollPosition >600 && this.scrollPosition <800 && !this.animated){
         //update in store
         playAnim();
         this.animated = true;

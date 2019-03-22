@@ -21,10 +21,8 @@ export default new Vuex.Store({
       {name:"Rajakaka",icon:"",link:""},
       {name:"Abhay Foods",icon:"",link:""},
       {name:"Grace Plasto",icon:"",link:""}
-      
-
     ],
-    scrollPosition:0
+    scrollPosition:0,
   },
   mutations: {
     updateScrollPosition:(state,position) => {

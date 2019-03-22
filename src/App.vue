@@ -44,13 +44,12 @@ body{
   box-sizing: border-box;
 }
   ::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
   background-color: #00ffff;
 }
   ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.8);
-  
-  }
+  background-color: rgba(0, 0, 0, 0.8);  
+}
 
 
   #app{

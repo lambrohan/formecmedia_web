@@ -96,8 +96,8 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      opacity: 0;
-      transition: all 0.2s linear;
+      top:-500px;
+      transition: all 0.4s ease;
     }
 
     p{
@@ -113,17 +113,17 @@ export default {
       text-align: center;
       letter-spacing: 0.19em;
       margin: 0;
-      transition: all 0.1s linear;
+      transition: all 0.4s ease;
     }
   }
 
   .client-card:hover{
     cursor: pointer;
     p{
-      opacity: 0;
+      transform: translateY(100px) ;
     }
     img{
-      opacity: 1;
+      top:0;
     }
 
   }
