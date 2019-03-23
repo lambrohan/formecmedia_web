@@ -74,7 +74,8 @@ export default {
     h4,p{
       text-align: right;
     }
-    h4::after{
+
+    h4::after,.overlay{
       right:0;
     }
    
@@ -86,7 +87,7 @@ export default {
     h4,p{
       text-align: left;
     }
-    h4::after{
+    h4::after,.overlay{
       left:0;
     }
     
@@ -110,6 +111,36 @@ export default {
     }
 
 
+  }
+}
+
+.left{
+  .info{
+    transform: translateX(-500px);
+    
+  }
+}
+.right{
+  .info{
+    transform: translateX(500px);
+  }
+}
+
+.left .cs-block:hover{
+  .overlay{
+    width: 100%;
+  }
+  .info{
+    transform: translateX(0);
+  }
+}
+
+.right .cs-block:hover{
+  .overlay{
+    width: 100%;
+  }
+  .info{
+    transform: translateX(0);
   }
 }
 
