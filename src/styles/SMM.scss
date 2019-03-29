@@ -1,0 +1,49 @@
+.intro{
+  width:100%;
+  height:100vh;
+  background-image:url('../assets/saturn.jpg');
+  background-size: cover;
+  background-position: 0% 50%;
+  position: relative;
+
+  .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(82, 0, 255, 0.85);
+  }
+
+  h4{
+    position: absolute;
+    top:4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: 900;
+    line-height: 15px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.69em;
+    text-indent: 0.69em;
+    color: white;
+  }
+
+  h1{
+    width: 686px;
+    position: absolute;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 101px;
+    font-size: 96px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+  }
+}

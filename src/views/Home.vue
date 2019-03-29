@@ -24,12 +24,16 @@ export default {
    CaseStudy,
    ClientGallery,
    Footer
+ },
+ mounted(){
+   this.$store.commit('setMenuColor','color-home');
  }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scopped>
 #home{
   position: relative;
+  background: #000;
 }
 
 </style>

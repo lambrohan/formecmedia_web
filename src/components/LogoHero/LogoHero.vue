@@ -155,12 +155,30 @@ export default {
 <style lang="scss" scopped>
 @import '../../styles/components/LogoHero';
 
+
 #logo-hero{
   background-color: #000;
   text-align: center;
   position: relative;
   overflow: hidden;
   width: 100%;
+  h4{
+    margin: 0 0 0 8px;
+    padding: 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.31em;
+    z-index: 10;
+}
+  
+
+
+
 }
 #canvas{
   width: 100%;

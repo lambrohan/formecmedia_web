@@ -35,9 +35,9 @@ export default {
   data(){
     return{
       caseStudiesLeft:[
-        {image:'http://placekitten.com/g/300/210',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
-        {image:'http://placekitten.com/g/300/210',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
-        {image:'http://placekitten.com/g/300/210',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
+        {image:'http://placekitten.com/g/300/200',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
+        {image:'http://placekitten.com/g/300/200',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
+        {image:'http://placekitten.com/g/300/200',title:"GNJ & Sons",info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam non."},
             
       ],
       caseStudiesRight:[
@@ -96,17 +96,20 @@ export default {
   .center{
     height: 100%;
     width: 20%;
-    text-align: center; 
-    padding: 95px 0 0 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h3{
       writing-mode: vertical-rl;
       text-orientation: upright;
-      margin: auto;
+      margin: 0;
       font-style: normal;
       font-weight: 900;
       font-size: 20px;
       @include for-tablet-landscape-up{
-        font-size: 50px;
+        font-size: 46px;
       }
     }
 
@@ -132,6 +135,7 @@ export default {
   }
   .info{
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -141,6 +145,7 @@ export default {
   }
   .info{
     transform: translateX(0);
+    opacity: 1;
   }
 }
 

@@ -36,8 +36,13 @@ export default {
 
 <style lang="scss">
 
-body{
-  background: #000;
+.router-link-active{
+  text-decoration: none;
+  
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 *{

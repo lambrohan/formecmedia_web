@@ -3,7 +3,7 @@
     <div class="overlay"></div>
     <h2 class="header">CLIENTS</h2>
     <div class="gallery">
-      <div v-for="client in clients" v-bind:key="client.name" class="client-card">
+      <div v-for="client in clients" v-bind:key="client.name" :class="{'client-card':client.name!='','space':client.name==''}">
         <img :src="client.icon" alt="">
         <p>{{client.name}}</p>
       </div>
@@ -75,9 +75,9 @@ export default {
     z-index: 2;
     align-items: center;
     justify-content: center;
-    @include for-tablet-landscape-up{
-      padding: 0 161px 0 161px;
-    }
+    padding: 0 100px;
+    box-sizing: border-box;
+  
     
   }
 
@@ -87,7 +87,7 @@ export default {
     z-index: 2;
     background: #00ffff31;
     position: relative;
-    margin: 4px;
+    // margin: 4px;
     overflow: hidden;
 
     img{
@@ -120,7 +120,7 @@ export default {
   .client-card:hover{
     cursor: pointer;
     p{
-      transform: translateY(100px) ;
+      transform: translateY(100px);
     }
     img{
       top:0;
@@ -128,6 +128,13 @@ export default {
 
   }
  
+}
+
+.space{
+  background: rgba(0, 0, 0, 0.178);
+  width: 180px;
+  height: 180px;;
+  z-index: 2;
 }
 </style>
 

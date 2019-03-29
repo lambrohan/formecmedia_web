@@ -43,7 +43,7 @@ export default {
     },
     (newVal)=>{
       this.scrollPosition = newVal;
-       if(this.scrollPosition >1900 && this.scrollPosition <2000 && !this.animated){
+       if(this.scrollPosition >2500 && this.scrollPosition <3000 && !this.animated){
         //update in store
         this.initGetQuoteAnimation();
         this.animated = true;

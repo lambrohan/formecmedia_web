@@ -5,14 +5,14 @@
     </div>
     <div :class="{showMenu:menuVisible}" class="menu">
       <div :class="{showHomeButton:menuVisible}"  class="home-button">
-        <img src="../assets/home-icon.png" alt="">
+        <router-link to="/"><img @click="handleMenuClick" src="../assets/home-icon.png" alt=""></router-link>
       </div>
-      <div class="bg"></div>
+      <div :class="menuColor" class="bg"></div>
       <div class="list">
-        <h2>Social Media Marketing</h2>
-        <h2>WEB DESIGN<br>&amp; DEVELOPMENT</h2>
-        <h2>VIDEOGRAPHY</h2>
-        <h2>APP DEVELOPMENT</h2>
+        <h2 @click="handleMenuClick"> <router-link to="/smm">Social Media Marketing</router-link> </h2>
+        <h2 @click="handleMenuClick" >WEB DESIGN<br>&amp; DEVELOPMENT</h2>
+        <h2 @click="handleMenuClick">VIDEOGRAPHY</h2>
+        <h2 @click="handleMenuClick">APP DEVELOPMENT</h2>
       </div>
       <h4>9607888333</h4>
     </div>
@@ -25,9 +25,18 @@ export default {
   data(){
     return{
       menuVisible:false,
+      menuColor:''
     }
   },
   mounted(){
+    
+    this.$store.watch(()=>{
+      return this.$store.state.menuColor
+    },
+    (newColor)=>{
+      this.menuColor = newColor;
+      
+    })
 
 
   },
@@ -44,7 +53,7 @@ export default {
 #container{
   width:100%;
   top:0;
-  z-index: 99;
+  z-index: 10000;
   position: absolute;
   font-family: 'Poppins' sans-serif;
   
@@ -63,8 +72,9 @@ export default {
     height:100%;
     top:0;
     left: 0;
-    position: absolute;;
-    background: #00ffffef;
+    position: absolute;
+    transition: background 0.7s  ease;
+    
   }
 
   .list{
@@ -133,6 +143,13 @@ export default {
 }
 .showHomeButton{
   left:16px;
+}
+
+.color-home{
+  background: #00ffffef;
+}
+.color-smm{
+  background: rgba(81, 0, 255, 0.897);
 }
 
 
