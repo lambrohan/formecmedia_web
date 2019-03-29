@@ -29,13 +29,12 @@ export default {
         },
         {
           title:"Heading three",
-          body : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ea in perferendis maxime perspiciatis est quis laudantium quam ipsam modi!"
-        },
-        {
-          title:"Heading four",
           body : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ea in perferendis maxime perspiciatis est quis laudantium quam ipsam modi!",
           last:true
         },
+       
+       
+     
       ]
     }
   },

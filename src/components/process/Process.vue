@@ -4,8 +4,8 @@
     <div class="wrapper">
       
       <div v-for="(item,index) in processList" v-bind:key="item.title" class="process-item ">
-        <div class="rect" :class="{'rect-left':isEven(index), 'rect-right':!isEven(index)}">
-          <div v-if="!item.last && index!=0" class="connector"></div>
+        <div class="rect" :class="{'rect-left':isEven(index),'rect-left-down':!item.last &&isEven(index) ,'rect-right':!isEven(index)}">
+          <div v-if="!item.last && index!=0 || (isEven(index) && index!==0) " class="connector"></div>
         </div>
         <div class="text-area" :class="{'order-first':!isEven(index)}">
           <h4>{{item.title}}</h4>
@@ -39,7 +39,6 @@ export default {
 }
 h2{
     color: white;
-    font-style: normal;
     font-weight: 900;
     font-size: 64px;
     line-height: 67px;
@@ -49,13 +48,13 @@ h2{
   }
 
   h4{
-    font-style: normal;
     font-weight: 900;
     font-size: 24px;
     line-height: 25px;
     letter-spacing: 0.31em;
     margin:0;
     padding:0;
+    text-transform: uppercase;
 
   }
 
@@ -109,7 +108,7 @@ h2{
     order: -1;
   }
 
-  .rect-left::after{
+  .rect-left-down::after{
     content: "";
     position: absolute;
     height: 116%;
@@ -121,7 +120,7 @@ h2{
     top:70%;     
     box-sizing: border-box;
   }
-  .rect-left::before{
+  .rect-left-down::before{
     content:"";
     position: absolute;
     width: 31px;
@@ -168,7 +167,7 @@ h2{
 
   .rect-right .connector{
     position: absolute;
-    width: 31%;
+    width: 30%;
     left:-31%;
     height:28%;
     border-top: 5px dashed #5200FF;
