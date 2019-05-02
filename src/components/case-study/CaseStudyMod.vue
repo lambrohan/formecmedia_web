@@ -35,21 +35,16 @@ export default {
       caseStudies:[
         {
           heading:'Reaching 1.5+ Lakh people in a month',
-          img:'https://i.pinimg.com/564x/f1/b4/57/f1b457783c5a2dad238da334f7d33b9f.jpg',
+          img:require('../../assets/case-study/cs1.svg'),
           info:`We ran a contest for a kids wear store in Kolhapur for branding purpose. 
             The number of people reached through this campaign crossed 1.5 lakh mark. 
             The page likes increased by 1164 organically & total engagement(likes, comments & shares) was more than 50,000 within a month.`
         },
          {
           heading:'100 leads in just 2 days',
-          img:require('../../assets/cs2.jpeg'),
+          img:require('../../assets/case-study/cs2.png'),
           info:'We carried out a lead generation campaign for a real estate project & received 118 enquiries within just 2 days.'
         },
-         {
-          heading:'Mannen',
-          img:'https://i.pinimg.com/564x/39/43/67/394367ee4c55592f62da3c737f82b434.jpg',
-          info:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
-        }
       ]
     }
   },
@@ -236,8 +231,8 @@ export default {
         img{
           height: 100%;
           width: 100%;
-          object-fit: contain;
-          object-position: right;
+          object-fit: cover;
+          object-position: center;
         }
       }
 

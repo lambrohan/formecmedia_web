@@ -9,8 +9,8 @@
     <div class="step1" v-vpshow >
      <div class="left" v-parallax="0.3" >
         <h2>STEP 01</h2>
-      <h1>We Study Your Business</h1>
-      <p> Lorem ips2um dolor sit amet consectetur adipisicing elit. Exercitationem excepturi quam eligendi nihil? Ex quos voluptatum harum reprehenderit consequuntur ducimus, tempore esse beatae dolore perferendis officia magnam, illo maxime labore sint doloribus fugit optio accusamus laboriosam odit distinctio maiores, obcaecati doloremque autem. Sit possimus velit voluptatum! Assumenda, voluptatem harum ipsum a modi, corporis delectus pariatur minus facilis officia doloremque totam. </p>
+      <h1>Analyzing your business</h1>
+      <p> We analyse your business and currrent marketing strategy. We make sure that we understood your unique selling point which enables us to devise a strategy that works. We also keep an eye on current events in market so that your brand shines out in every situation. </p>
      </div>
      <div class="right" >
        <img src="../assets/smm/step1.svg" v-parallax="0.2" alt="">
@@ -24,7 +24,8 @@
      <div class="right" v-parallax="0.3" >
         <h2>STEP 02</h2>
       <h1>Know your consumer</h1>
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur ex possimus voluptate laudantium, perspiciatis dolores repudiandae et tempora saepe consequatur ducimus cumque maxime aut est explicabo assumenda nesciunt quibusdam sunt! </p>
+      <p>The goal here is structuring the audience and classify the most ideal audience which can be converted to customer. We identify the platform where the target customers spend most of their time and plan accordingly.
+      </p>
      </div>
     </div>
 
@@ -32,7 +33,7 @@
      <div class="left" v-parallax="0.3" >
         <h2>STEP 03</h2>
       <h1>Build Content Strategy</h1>
-      <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos fugit consequuntur adipisci qui nostrum culpa minus dolorem consequatur atque fugiat exercitationem provident excepturi, porro soluta. Velit laboriosam dolore nihil obcaecati recusandae et suscipit optio, sit amet! Sit reprehenderit voluptatum quae. </p>
+      <p>Now that we know who the target audience is, we can build content strategy which is responsible for maximizing the audience engagement and reataining the attaintion of customers. </p>
      </div>
      <div class="right" >
        <img src="../assets/smm/build.svg" v-parallax="0.2" alt="">
@@ -46,7 +47,7 @@
      <div class="right" v-parallax="0.3" >
         <h2>STEP 04</h2>
       <h1>Develope Social Media Plan</h1>
-      <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nobis, porro vero magnam dicta rerum voluptatibus eius officiis, nihil neque, dolores quo molestias amet deserunt! </p>
+      <p>Social media is centered around the content. So based on your marketing goals and according to content strategy we create and curate content that will build a stable and loyal following base.</p>
      </div>
     </div>
 
@@ -54,7 +55,7 @@
      <div class="left" v-parallax="0.3" >
         <h2>STEP 05</h2>
       <h1>Measure &amp; Fine Tune</h1>
-      <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos fugit consequuntur adipisci qui nostrum culpa minus dolorem consequatur atque fugiat exercitationem provident excepturi, porro soluta. Velit laboriosam dolore nihil obcaecati recusandae et suscipit optio, sit amet! Sit reprehenderit voluptatum quae. </p>
+      <p>Having a birds eye view of social media activity helps to put things to perspective. So we assess our marketing campaigns, analyse our efforts &amp; constantly find a space for improvement. Thus fine tuning the campaigns to attain the most efficient state which will indeed give maximum result and thus optimizing the marketing budget.</p>
      </div>
      <div class="right" >
        <img src="../assets/smm/last.svg" v-parallax="0.2" alt="">

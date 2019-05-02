@@ -20,6 +20,7 @@ export default {
   name:'TheTeam',
   data(){
     return{
+      loading:false,
       currentBg:4,
       cards:[
         {
@@ -64,6 +65,28 @@ export default {
   overflow: hidden;
   position: relative;
   height: 420px;
+
+  .loading{
+    border: 2px dotted #00ffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    border-left: 1px solid transparent;
+    top:50%;
+    left:50%;
+    animation: rotate 1s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+    
+  }
   .vid{
     width: 100%;
     display: flex;
@@ -80,6 +103,7 @@ export default {
     object-position: center;
     
   }
+
   
 
   h1{
