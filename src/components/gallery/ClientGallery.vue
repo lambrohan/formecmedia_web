@@ -1,13 +1,12 @@
 <template>
-  <div id="container">
+  <div id="g-container">
     <div class="overlay"></div>
-    <h2 class="header">CLIENTS</h2>
     <div class="gallery">
-      <div v-for="client in clients" v-bind:key="client.name" :class="{'client-card':client.name!='','space':client.name==''}">
-        <img :src="client.icon" alt="">
-        <p>{{client.name}}</p>
+      <div v-for="item in clients" :key="item.name" class="card">
+        <img :src="item.icon" :alt="item.name">
       </div>
     </div>
+    <p class="heading1">CLIENTS</p>
   </div>
 </template>
 
@@ -21,49 +20,53 @@ export default {
     }
   },
   mounted(){
-
+    
   }
 }
 </script>
 
 <style lang="scss" scoped>
-#container{
+#g-container{
   position: relative;
   width: 100%;
-  min-height: 105vh;
-  background-image: url('../../assets/bg-client-showcase.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   box-sizing: border-box;
-  z-index: 0;
-   @include for-tablet-landscape-up{
-     padding-top: 10px;
-    }
+  background:#151515;
+  padding-top: 1px;
+  padding-bottom: 1px;
+   
   
-  
-
-  .overlay{
+  .precursor-shape{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.756);
-    z-index: -1;
+
   }
 
-  .header{
-    width: 100%;
-    text-align: center;
+
+  // .overlay{
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(0, 0, 0, 0.756);
+  //   z-index: -1;
+  // }
+
+  .precursor-shape{
+    background: url('../../assets/precursor-shape.png');
+    
+  }
+
+  .heading1{
+    padding: 0;
     font-weight: 900;
-    letter-spacing: 0.75em;
-    text-indent: 0.75em;
-    background: linear-gradient(to bottom, #a5a5a5 44.17%, #fff 71.87%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 1;
+    letter-spacing: 0.17em;
+    color: #1D1D1D;
+    margin:0;
+    line-height: 100px;
+    margin-left: 32px;
+    vertical-align: text-bottom;
+    font-size: 100px;
     @include for-tablet-landscape-up{
-       font-size: 72px;
+       font-size: 144px;
+       
     }
   }
 
@@ -77,65 +80,31 @@ export default {
     justify-content: center;
     padding: 0 100px;
     box-sizing: border-box;
-  
-    
-  }
 
-  .client-card{
-    width: 180px;
-    height: 180px;;
-    z-index: 2;
-    background: #00ffff31;
-    position: relative;
-    // margin: 4px;
-    overflow: hidden;
+    .card{
+      margin:0 30px;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 105px;
+        height: 105px;
+        object-fit: contain;
+        filter: grayscale(1);
+        transition: all 0.2s ease-in;
 
-    img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      top:-500px;
-      transition: all 0.4s ease;
+      }
     }
 
-    p{
-      position: absolute;
-      top:50%;
-      transform: translateY(-50%);
-      width: 100%;
-      font-style: normal;
-      text-transform: uppercase;
-      color: white;
-      font-weight: 500;
-      font-size: 12px;
-      text-align: center;
-      letter-spacing: 0.19em;
-      margin: 0;
-      transition: all 0.4s ease;
+    .card:hover{
+      img{
+        filter: grayscale(0);
+      }
     }
   }
 
-  .client-card:hover{
-    cursor: pointer;
-    p{
-      transform: translateY(100px);
-    }
-    img{
-      top:0;
-    }
-
-  }
  
 }
 
-.space{
-  background: rgba(0, 0, 0, 0.178);
-  width: 180px;
-  height: 180px;;
-  z-index: 2;
-}
 </style>
 
 

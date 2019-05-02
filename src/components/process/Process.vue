@@ -1,13 +1,12 @@
 <template>
-  <div id="container">
+  <div id="pro-container">
     <h2>The Process</h2>
-    <div class="wrapper">
-      
-      <div v-for="(item,index) in processList" v-bind:key="item.title" class="process-item ">
-        <div class="rect" :class="{'rect-left':isEven(index),'rect-left-down':!item.last &&isEven(index) ,'rect-right':!isEven(index)}">
-          <div v-if="!item.last && index!=0 || (isEven(index) && index!==0) " class="connector"></div>
+    <div class="wrapper">    
+      <div v-for="(item,index) in processList" v-bind:key="item.title" :class="[getTheme()]" class="process-item">
+        <div class="rect" :class="[{'rect-left':isEven(index)},{'rect-left-down':!item.last && isEven(index)} ,{'rect-right':!isEven(index)},getTheme()]">
+          <div v-if="!item.last && index != 0 || (isEven(index) && index!==0) " class="connector" :class="[getTheme()]" ></div>
         </div>
-        <div class="text-area" :class="{'order-first':!isEven(index)}">
+        <div class="text-area " :class="[{'order-first':!isEven(index)},getTheme()]">
           <h4>{{item.title}}</h4>
           <p>{{item.body}}</p>
         </div>
@@ -18,21 +17,38 @@
 <script>
 export default {
   name:'processComponent',
-  props:['processList'],
+  props:['processList','color'],
   data(){
     return{
-      
+      themeColor:''
     }
+  },
+  mounted(){      
+    this.$store.watch(()=>{
+      return this.$store.state.menuColor
+    },
+    (newColor)=>{
+      this.themeColor = newColor;
+      
+    })
+
+
   },
   methods:{
     isEven:(n)=>{
       return n % 2 == 0;
+    },
+    getTheme:function(){
+      return this.themeColor;
     }
+  },
+  created(){
   }
 }
 </script>
 <style lang="scss" scoped>
-#container{
+
+#pro-container{
   width: 100%;
   position: relative;
 
@@ -62,16 +78,14 @@ h2{
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
-    line-height: 15px;
-    letter-spacing: 0.06em;
     opacity: 0.85;
     max-width: 500px;
+    color: white;
   }
 
   .wrapper{
     max-width: 60%;
     margin: 100px auto 0 auto;
-    padding-bottom: 100px;
 
     .process-item{
       display: flex;
@@ -80,7 +94,6 @@ h2{
       @include for-tablet-portrait-up {
         margin-bottom: 121px;
       }
-      
       .rect{
         width: 40%;
         height: 187px;
@@ -91,11 +104,11 @@ h2{
         position: relative;
         z-index: 200;
         box-sizing: border-box;
+        
       }
     
       .text-area{
         width: 40%;
-        color:white;
         text-align: left;
       }
     }
@@ -106,12 +119,13 @@ h2{
 
   .order-first{
     order: -1;
+    text-align: right !important;
   }
 
   .rect-left-down::after{
     content: "";
     position: absolute;
-    height: 116%;
+    height: 119%;
     width: 25%;
     right:-27%;
     border-right: 5px dashed #5200FF;
@@ -215,6 +229,39 @@ h2{
     right:20%;
     top: -18px;
   }
+
+.color-smm{
+  border-color: #5200FF !important;
+  color:#5200FF;
+   ::after , ::before{
+    border-color: #5200FF !important;
+  
+  }
+}
+.color-video{
+  border-color: #fff !important;
+  color:#fff;
+   ::after , ::before{
+    border-color: #fff !important;
+  
+  }
+}
+.color-web{
+  border-color: #FF0099 !important;
+  color:#FF0099;
+   ::after , ::before{
+    border-color: #FF0099 !important;
+  
+  }
+}
+.color-app{
+  border-color: #21B939 !important;
+  color:#21B939;
+   ::after , ::before{
+    border-color: #21B939 !important;
+  
+  }
+}
 
 
 </style>

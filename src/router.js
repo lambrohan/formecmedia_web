@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import SMM from './views/SocialMediaMarketing.vue'
+import Social from './views/SocialMediaMarketing.vue'
+import Video from './views/Video.vue'
+import App from './views/App'
+import Web from './views/Web'
 
 Vue.use(Router)
 
@@ -17,7 +20,22 @@ export default new Router({
     {
       path:'/smm',
       name:'smm',
-      component:SMM
+      component:Social
+    },
+    {
+      path:'/video',
+      name:'Video',
+      component:Video
+    },
+    {
+      path:'/app',
+      name:'App',
+      component:App
+    },
+    {
+      path:'/web',
+      name:'Web',
+      component:Web
     },
     {
       path: '/about',

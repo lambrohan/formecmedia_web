@@ -1,18 +1,18 @@
 <template>
   <div id="container">
-    <div class="navTrigger" :class="{active:menuVisible}" @click="handleMenuClick">
+    <div class="navTrigger" :class="[getColorForMenu(),{active:menuVisible}]" @click="handleMenuClick" >
       <i></i><i></i><i></i>
     </div>
     <div :class="{showMenu:menuVisible}" class="menu">
-      <div :class="{showHomeButton:menuVisible}"  class="home-button">
+      <div :class="[getColorForMenu(),{showHomeButton:menuVisible}]"  class="home-button">
         <router-link to="/"><img @click="handleMenuClick" src="../assets/home-icon.png" alt=""></router-link>
       </div>
-      <div :class="menuColor" class="bg"></div>
-      <div class="list">
+      <div :class="[getMenuBg()]" class="bg"></div>
+      <div class="list" :class="[`${menuColor}`]">
         <h2 @click="handleMenuClick"> <router-link to="/smm">Social Media Marketing</router-link> </h2>
-        <h2 @click="handleMenuClick" >WEB DESIGN<br>&amp; DEVELOPMENT</h2>
-        <h2 @click="handleMenuClick">VIDEOGRAPHY</h2>
-        <h2 @click="handleMenuClick">APP DEVELOPMENT</h2>
+        <h2 @click="handleMenuClick" > <router-link to='/web'>WEB DESIGN<br>&amp; DEVELOPMENT</router-link> </h2>
+        <h2 @click="handleMenuClick"> <router-link to='/video'>VIDEOGRAPHY</router-link></h2>
+        <h2 @click="handleMenuClick"> <router-link to='/app'>APP DEVELOPMENT</router-link></h2>
       </div>
       <h4>9607888333</h4>
     </div>
@@ -25,10 +25,11 @@ export default {
   data(){
     return{
       menuVisible:false,
-      menuColor:''
+      menuColor:'',
     }
   },
   mounted(){
+    console.log("MOUNTED")
     
     this.$store.watch(()=>{
       return this.$store.state.menuColor
@@ -43,6 +44,24 @@ export default {
   methods:{
     handleMenuClick:function(){
       this.menuVisible = !this.menuVisible;
+    },
+    getColorForMenu:function(){
+      if(this.menuColor === 'color-home'){
+        return `menu-home`
+      }else if(this.menuColor === 'color-smm'){
+        return 'menu-smm'
+      }else if(this.menuColor === 'color-video'){
+        return 'menu-video'
+      }
+      else if(this.menuColor === 'color-web'){
+        return 'menu-web'
+      }
+      else if(this.menuColor === 'color-app'){
+        return 'menu-app'
+      }
+    },
+    getMenuBg:function (){
+      return this.menuColor;
     }
   }
   
@@ -53,10 +72,9 @@ export default {
 #container{
   width:100%;
   top:0;
-  z-index: 10000;
+  z-index: 1000;
   position: absolute;
   font-family: 'Poppins' sans-serif;
-  
  
 }
 .menu{
@@ -101,7 +119,6 @@ export default {
       letter-spacing: 0.32em;
       text-align: center;
       text-transform: uppercase;
-      color: #00ffff;
       text-shadow: 0px 0px 2px black;
       transition: color 0.3s ease;
 
@@ -142,16 +159,53 @@ export default {
   top:0;
 }
 .showHomeButton{
-  left:16px;
+  right:0;
 }
 
 .color-home{
   background: #00ffffef;
+  color: #00ffffef;
 }
 .color-smm{
   background: rgba(81, 0, 255, 0.897);
+  color: rgb(81, 0, 255);
 }
 
+.color-video{
+  background: rgba(255, 255, 255, 0.897);
+  color: rgb(255, 255, 255);
+}
+.color-app{
+  background: #21B939;
+  color: #21B939;
+}
+.color-web{
+  background: #FF0099;
+  color: #FF0099;
+}
+
+
+// MENU DYNAMIC
+
+.menu-home{
+  background: #96FFFF;
+}
+
+.menu-smm{
+  background: rgba(78, 96, 255, 0.85);
+}
+
+.menu-web{
+  background: #FF53BA;
+}
+
+.menu-video{
+  background: rgba(255, 255, 255, 0.897);
+}
+
+.menu-app{
+  background: #4FD965;
+}
 
 
 

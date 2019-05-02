@@ -2,33 +2,36 @@
   <div id="app">
     <MenuView/>
     <router-view/>
+    <FloatingLogoPanel/>
+    <Modal v-if="modalShown" v-bind:modalShown="modalShown"/>
   </div>
 </template>
 
 <script>
 import MenuView from '@/components/Menu.vue'
+import FloatingLogoPanel from '@/components/FloatingLogoPanel';
+import Modal from '@/components/QuoteModal';
 export default {
   name:"MyApp",
   components:{
-    MenuView
+    MenuView,
+    FloatingLogoPanel,
+    Modal
   },
   data(){
     return{
-      scrollPosition:0
+      modalShown:false
     }
   },
   mounted(){
-    this.setupListener();
+    this.$store.watch(() => this.$store.getters.getModalState, res => {
+    this.modalShown = res;
+    },{immediate: true})
   },
   methods:{
-    setupListener:function(){
-    return window.addEventListener('scroll',()=>{
-      this.scrollPosition = window.scrollY;
-       //update in store
-        this.$store.commit('updateScrollPosition',this.scrollPosition);
-    })
-    }
-  }
+
+  },
+  
   
 }
 </script>

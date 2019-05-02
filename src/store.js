@@ -6,38 +6,49 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     clients:[
-      {name:"Mahendra Jewellers",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:"https://www.mahendrajewellers.com/"},
-      {name:"",icon:""},
-      {name:"Bellpepper Resto",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Kisan Tyres",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Yellow Chill Resto",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Madhuri Bakery",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Kiran Electricals",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Hongkong Resto",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"GNJ & Sons",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Tanatan Resto",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Kajave Furniture",icon:"https://images-na.ssl-images-amazon.com/images/I/51zRqKn8LnL._SX679_.jpg",link:""},
-      {name:"",icon:""},
-      {name:"Unique Automobiles",icon:"",link:""},
-      {name:"",icon:""},
-      {name:"Dressland",icon:"",link:""},
-      {name:"",icon:""},
-      {name:"Rajakaka",icon:"",link:""},
-      {name:"",icon:""},
-      {name:"Abhay Foods",icon:"",link:""},
-      {name:"",icon:""},
-      {name:"Grace Plasto",icon:"",link:""},
-    ],
-    scrollPosition:0,
-    menuColor:''
+     {
+       name:"Mahendra Jewellers",
+       icon:'./clients/mahendra.png'
+    },
+    {
+      name:"Kisan Tyres",
+      icon:'./clients/kisan.png'
+    },
+    
+    {
+      name:"Hongkong Resto Kolhapur",
+      icon:'./clients/hongkong.png'
+    },
+    {
+      name:"GNJ & Sons",
+      icon:'./clients/gnj.png'
+    },
+    {
+      name:"Tanatan Kolhapur",
+      icon:'./clients/tanatan.png'
+    },
+    {
+      name:"Rajakaka Electronics",
+      icon:'./clients/rajakaka.png'
+    },
+    {
+      name:"Bellpepper Resto",
+      icon:'./clients/bellpepper.png'
+    },
+    {
+      name:"Abhay Foods",
+      icon:'./clients/abhay.png'
+    },
+    {
+      name:"Exotico",
+      icon:'./clients/exotico.png'
+    },
+
+    
+    
+  ],
+    menuColor:'',
+    modalShown:false
   },
   mutations: {
     updateScrollPosition:(state,position) => {
@@ -45,6 +56,9 @@ export default new Vuex.Store({
     },
     setMenuColor: (state,color) => {
       state.menuColor = color;
+    },
+    toggleModal:(state,val)=>{
+      state.modalShown = val;
     }
 
   },
@@ -60,6 +74,9 @@ export default new Vuex.Store({
     },
     getMenuColor : state => {
       return state.menuColor;
+    },
+    getModalState : state => {
+      return state.modalShown
     }
   }
 })

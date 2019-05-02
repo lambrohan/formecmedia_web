@@ -1,7 +1,8 @@
 <template>
   <div id="container">
+    <img class="precursor-shape top-left" src="../assets/precursor-shape.png">
     <div class="svg">
-      <svg id="get-quote" width="300" height="81" viewBox="0 0 774 81" fill="" xmlns="http://www.w3.org/2000/svg">
+      <svg @click="showQuoteModal" id="get-quote" width="300" height="81" viewBox="0 0 774 81" fill="" xmlns="http://www.w3.org/2000/svg">
         <mask id="path-1-inside-1" fill="white">
         <path d="M0 35.04C0 28.32 1.376 22.336 4.128 17.088C6.944 11.84 10.944 7.776 16.128 4.896C21.312 1.952 27.392 0.480003 34.368 0.480003C43.264 0.480003 50.496 2.624 56.064 6.912C61.696 11.2 65.024 17.024 66.048 24.384H43.584C42.752 23.04 41.568 22.016 40.032 21.312C38.496 20.544 36.64 20.16 34.464 20.16C30.368 20.16 27.2 21.504 24.96 24.192C22.72 26.816 21.6 30.432 21.6 35.04C21.6 40.352 22.848 44.32 25.344 46.944C27.84 49.568 31.68 50.88 36.864 50.88C41.792 50.88 45.76 48.896 48.768 44.928H31.776V29.856H66.432V51.168C63.488 56.224 59.424 60.576 54.24 64.224C49.056 67.808 42.496 69.6 34.56 69.6C27.52 69.6 21.376 68.16 16.128 65.28C10.944 62.336 6.944 58.24 4.128 52.992C1.376 47.744 0 41.76 0 35.04Z"/>
         <path d="M126.139 18.048V26.496H147.259V42.528H126.139V52.128H150.139V69.12H104.827V1.152H150.139V18.048H126.139Z"/>
@@ -27,6 +28,7 @@
 </template>
 <script>
 import anime from 'animejs';
+import inViewport from 'vue-in-viewport-mixin';
 export default {
   name:"MyFooter",
   data(){
@@ -37,21 +39,6 @@ export default {
     }
   },
   mounted(){
-   //setting up watcher for scroll
-    this.$store.watch(()=>{
-      return this.$store.state.scrollPosition
-    },
-    (newVal)=>{
-      this.scrollPosition = newVal;
-       if(this.scrollPosition >2500 && this.scrollPosition <3000 && !this.animated){
-        //update in store
-        this.initGetQuoteAnimation();
-        this.animated = true;
-        
-      }
-    })
-
-
   },
   methods:{
     initGetQuoteAnimation:function(){
@@ -68,20 +55,36 @@ export default {
 
       })
       quoteAnim.restart();
+    },
+    showQuoteModal:function(){
+      this.$store.commit('toggleModal',true);
     }
-  }
+  },
+  mixins:[inViewport],
+  watch:{
+    'inViewport.now': function() {
+      this.initGetQuoteAnimation();
+    }
   
+  }
 }
 </script>
 <style lang="scss" scoped>
 #container{
   width: 100%;
-  height:400px;
+  height:150px;
   position: relative;
+  background: #1a1a1a;
+
+  .top-left{
+    position: absolute;
+    left:5%;
+    transform: translateY(-49%);
+  }
 
   #get-quote{
     position: absolute;
-    margin-top: 3rem;
+    margin-top: 1.2rem;
     left: 50%;
     top:30%;
     padding:0 16px;
@@ -110,7 +113,7 @@ export default {
 
   .copyright{
     position: absolute;
-    bottom: 1rem;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     font-style: normal;

@@ -1,27 +1,48 @@
 <template>
-  <div id="home-intro">
+  <div id="home-intro" v-bind:style="{ 'background-image': 'url(' + bgImages[currentBg] + ')' }">
     <div class="gradient"></div>
     <h4>Formec Media</h4>
     <h1>A <br> Digital Marketing Company</h1>
-
   </div>
 </template>
 
 <script>
+import { setInterval } from 'timers';
 export default {
   name:"HomeIntro",
+  components:{
+  },
+  data(){
+    return{
+      currentBg:0,
+      bgImages:[
+        require('../assets/home_bg/1.png'),
+        require('../assets/home_bg/2.png'),
+        require('../assets/home_bg/3.png'),
+        require('../assets/home_bg/4.png'),
+      ]
+    }
+  },
+  created(){
+    const i = setInterval(this.changeBg,300);
+  },
+  methods:{
+    changeBg:function (){
+      this.currentBg == this.bgImages.length-1 ? this.currentBg = 0 : this.currentBg++
+    }
+  }
   
 }
 </script>
-
 <style lang="scss" scoped>
 #home-intro{
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/saturn.jpg');
   background-size: cover;
-  background-position: 0% 50%;
+  background-position: center;
+  transition: background 200ms ease;
+  
 
   h4{
     position: absolute;
@@ -58,6 +79,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100vh;
+  // z-index: 100;
   background: linear-gradient(180deg, rgba(0, 255, 255, 0.9) 0%,
     rgba(0, 255, 255, 0.9) 34.45%, rgba(0, 255, 255, 0.225) 72.12%,
     rgba(0, 255, 255, 0) 93.88%);

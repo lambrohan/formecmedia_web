@@ -1,17 +1,18 @@
 $animation-time:0.4s;
+$border-radius:2px;
 
 .home-button{
   position: fixed;
-  left:-100px;
-  top:16px;
+  right:-100px;
+  top:68px;
   width: 30px;
   height:30px;
   padding: 8px;
   cursor: pointer;
-  border-radius: 4px;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   box-sizing: content-box;
-  background: #96FFFF;
-  transition: left 0.3s 600ms ease;
+  transition: right 0.3s 600ms ease;
   z-index: 99;
   img{
     width: 30px;
@@ -28,12 +29,13 @@ $animation-time:0.4s;
   height: 30px;
   position: fixed;
   margin:auto;
-  background: #96FFFF;
+  // background: rgba(255, 255, 255, 0.521);
   padding: 8px;
   box-sizing: content-box;
-  right:16px;
+  right:0;
   top:16px;
-  border-radius: 4px;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
   z-index: 100;
   i {
     background-color: #000;
