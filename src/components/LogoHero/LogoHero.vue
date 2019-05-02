@@ -4,28 +4,28 @@
    <!-- DIGITAL MKTING -->
     <div class="logo"></div>
     <div class="d-m">
-      <h4>Digital Marketing</h4>
+      <router-link to="/smm"><h4>Digital Marketing</h4></router-link>
       <div class="left"></div>
       <div class="right"></div>
       <div class="dot"></div>
     </div>
     <!-- APP DEVELOPMENT -->
     <div class="app-dev">
-     <h4>App Development</h4>
+     <router-link to="/app"><h4>App Development</h4></router-link> 
      <div class="left"></div>
      <div class="right"></div>
      <div class="dot"></div>
     </div>
     <!-- WEB DESIGN -->
     <div class="web-dev">
-     <h4>Web Design &amp; Development</h4>
+    <router-link to="/web"><h4>Web Design &amp; Development</h4></router-link>
      <div class="left"></div>
      <div class="right"></div>
      <div class="dot"></div>
     </div>
      <!-- VIDEOGRAPHY -->
     <div class="videography">
-     <h4>VIDEOGRAPHY</h4>
+    <router-link to="/video"><h4>VIDEOGRAPHY</h4></router-link>
      <div class="left"></div>
      <div class="right"></div>
      <div class="dot"></div>
